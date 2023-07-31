@@ -21,22 +21,20 @@ template_id = os.environ["TEMPLATE_ID"]
 def get_weather():
   url = "http://t.weather.itboy.net/api/weather/city/" + city
   res = requests.get(url).json()
-  print(res['data'])
-  print(res['data']['forecast'])
   print(res['data']['forecast'][0])
-  weatherHigh = res['data']['forecast'][0].high
-  weatherLow = res['data']['forecast'][0].low
-  weatherSunrise = res['data']['forecast'][0].sunrise
-  weatherSunset = res['data']['forecast'][0].sunset
-  weatherFx = res['data']['forecast'][0].fx
-  weatherFj = res['data']['forecast'][0].fj
-  weatherType = res['data']['forecast'][0].type
-  weatherNotice = res['data']['forecast'][0].notice
-  quality = res['data'].quality
-  shidu = res['data'].shidu
-  pm25 = res['data'].pm25
-  pm10 = res['data'].pm10
-  wendu = res['data'].wendu
+  weatherHigh = res['data']['forecast'][0]['high']
+  weatherLow = res['data']['forecast'][0]['low']
+  weatherSunrise = res['data']['forecast'][0]['sunrise']
+  weatherSunset = res['data']['forecast'][0]['sunset']
+  weatherFx = res['data']['forecast'][0]['fx']
+  weatherFj = res['data']['forecast'][0]['fj']
+  weatherType = res['data']['forecast'][0]['type']
+  weatherNotice = res['data']['forecast'][0]['notice']
+  quality = res['data']['quality']
+  shidu = res['data']['shidu']
+  pm25 = res['data']['pm25']
+  pm10 = res['data']['pm10']
+  wendu = res['data']['wendu']
   return weatherHigh,weatherLow,weatherSunrise,weatherSunset,weatherFx,weatherFj,weatherType,weatherNotice,quality,shidu,pm25,pm10,wendu
 
 def get_count():
