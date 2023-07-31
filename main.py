@@ -21,8 +21,9 @@ template_id = os.environ["TEMPLATE_ID"]
 def get_weather():
   url = "http://t.weather.itboy.net/api/weather/city/" + city
   res = requests.get(url).json()
-  print(res)
-  print(res['data']['forecast'][0].high)
+  print(res['data'])
+  print(res['data']['forecast'])
+  print(res['data']['forecast'][0])
   weatherHigh = res['data']['forecast'][0].high
   weatherLow = res['data']['forecast'][0].low
   weatherSunrise = res['data']['forecast'][0].sunrise
