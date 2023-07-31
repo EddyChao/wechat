@@ -27,7 +27,7 @@ def get_weather():
   weatherSunrise = res['data']['forecast'][0]['sunrise']
   weatherSunset = res['data']['forecast'][0]['sunset']
   weatherFx = res['data']['forecast'][0]['fx']
-  weatherFj = res['data']['forecast'][0]['fj']
+  weatherFj = res['data']['forecast'][0]['fl']
   weatherType = res['data']['forecast'][0]['type']
   weatherNotice = res['data']['forecast'][0]['notice']
   quality = res['data']['quality']
